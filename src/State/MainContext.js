@@ -6,7 +6,7 @@ const MainProvider = ({children}) =>{
     const [reposData, setReposData] = useState("");
     const [followersData, setFollowersData] = useState("");
     const [loading,setLoading] = useState(true);
-    const [searchTerm,setSearchTerm]= useState('');
+    const [searchTerm,setSearchTerm]= useState();
     // if(userData && reposData && followersData){
     //     setLoading(false)
     // }
