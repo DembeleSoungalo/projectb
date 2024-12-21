@@ -19,7 +19,7 @@ const Followers = () => {
                   <div className='reposCard ' >
                   <Row>
                       <Col md={3}>
-                      <Image src={e.avatar_url} alt='avatar' fluid roundedCircle></Image>
+                      <Image src={e.html_url} alt='avatar' fluid roundedCircle></Image>
                       </Col>
                       <Col>
                           <h2>{e.login}</h2>
