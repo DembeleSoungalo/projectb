@@ -3,10 +3,10 @@ import {Users,Repos,Followers} from '../DummyData/UsersData'
 export const MainContext = React.createContext();
 const MainProvider = ({children}) =>{
     const [userData, setUserData] = useState();
-    const [reposData, setReposData] = useState("");
-    const [followersData, setFollowersData] = useState("");
+    const [reposData, setReposData] = useState(" ");
+    const [followersData, setFollowersData] = useState(" ");
     const [loading,setLoading] = useState(true);
-    const [searchTerm,setSearchTerm]= useState('creativekamrul');
+    const [searchTerm,setSearchTerm]= useState("creativekamrul");
     // if(userData && reposData && followersData){
     //     setLoading(false)
     // }
