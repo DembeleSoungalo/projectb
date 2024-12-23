@@ -13,6 +13,7 @@ function App() {
   
   return (
     <div className="App">
+    
 
       <Navbar expand="lg" bg='dark' variant='dark' >
         <Container>
@@ -20,11 +21,11 @@ function App() {
         </Container>
       </Navbar>
     
-   <MainProvider>
+ 
    <SearchSection/>
 
     <InfoSection></InfoSection>
-   </MainProvider>
+  
     </div>
     
   );

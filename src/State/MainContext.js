@@ -44,7 +44,7 @@ const getReposData = async (reposUrl) => {
             loading,
             userData,
             reposData, 
-            followersData ,
+            followersData,
             searchTerm,
             setSearchTerm,
             getUserData,

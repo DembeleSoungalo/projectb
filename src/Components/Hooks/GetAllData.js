@@ -2,16 +2,34 @@ import React, { useContext, useEffect } from 'react'
 
 import {Container,Row,Col,Form,Button} from 'react-bootstrap';
 import { MainContext } from '../../State/MainContext';
-import { Users } from '../../DummyData/UsersData';
 
-const SearchSection = () => {
+import { Users } from '../../DummyData/UsersData';
+import UseFetch from './UseFetch';
+const GetAllData = () => {
 const {getUserData,searchTerm,setSearchTerm,getFollowersData,getReposData} = useContext(MainContext)
+const { isLoading, serverError, apiData} = UseFetch(Users)
+console.log(apiData);
+
+
 const handelSubmit = (e)=>{
   e.preventDefault();
   getUserData("https://api.github.com/users/" + searchTerm);
-  getFollowersData("https://api.github.com/users/"+searchTerm+ "/followers");
-  getReposData("https://api.github.com/users/" + searchTerm + "/repos");
+  getFollowersData("https://api.github.com/users/" +searchTerm + "followers");
+  getReposData("https://api.github.com/users/"+ searchTerm + "repos");
   
+}
+ const DataAPi = () =>{
+    return (
+        <div>
+            <h2>API data</h2>
+            {isLoading && <span>Loading....</span> }
+            {!isLoading && serverError ? (
+                <span>Error in fetching data</span>
+            ) : (
+                <span>{JSON.stringify(apiData)}</span>
+            )}
+        </div>
+    )
 }
 useEffect(()=>{
 
@@ -21,7 +39,7 @@ useEffect(()=>{
     <Container >
         <Row>
             <Col>
-            <Form className="d-flex mt-5" onSubmit={handelSubmit} >
+            <Form className="d-flex mt-5" onSubmit={handelSubmit}>
             <Form.Control
               type="search"
               placeholder="Users Name"
@@ -32,7 +50,7 @@ useEffect(()=>{
                 setSearchTerm(e.target.value)
               }}
             />
-            <Button variant="primary   ms-3" type='submit'>Search</Button>
+            <Button variant="primary ms-3" type='submit'>Search</Button>
           </Form>
             </Col>
         </Row>
@@ -41,4 +59,4 @@ useEffect(()=>{
   )
 }
 
-export default SearchSection
+export default GetAllData
