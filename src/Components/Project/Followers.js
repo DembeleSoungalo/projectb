@@ -12,14 +12,14 @@ const Followers = () => {
   return (
  
     <div className='reposContainer mt-4'>
-            {/* {
+             {
               followersData.map((e)=>{
                 return(
                   <div key={e.id} >
                   <div className='reposCard ' >
                   <Row>
                       <Col md={3}>
-                      <Image src={e.html_url} alt='avatar' fluid roundedCircle></Image>
+                      <Image src={e.avatar_url} alt='avatar' fluid roundedCircle></Image>
                       </Col>
                       <Col>
                           <h2>{e.login}</h2>
@@ -31,7 +31,7 @@ const Followers = () => {
                   </div>
                 )
               })
-            } */}
+            }
         </div>
  
 )
