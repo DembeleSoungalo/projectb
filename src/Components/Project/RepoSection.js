@@ -10,7 +10,7 @@ const RepoSection = () => {
   if(reposData){
     return (
       <div className="reposContainer mt-4">
-          {/* {
+           {
             reposData.map((e)=>{
               return(
                 <div key={e.id} >
@@ -21,7 +21,7 @@ const RepoSection = () => {
                 </div>
               )
             })
-          } */}
+          }
       </div>
     )
   }else{
